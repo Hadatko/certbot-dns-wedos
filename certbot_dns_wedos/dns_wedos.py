@@ -130,7 +130,7 @@ class Authenticator(DNSAuthenticator):
         if self.arguments["credentials"]: self._get_credentials()
 
         for arg in ["user", "auth", "finalize"]:
-            if not self.credentials.conf(arg): continue
+            if not self.credentials or not self.credentials.conf(arg): continue
             self.arguments[arg] = self.arguments[arg] or self.credentials.conf(arg)
 
         if not self.arguments["user"]:
