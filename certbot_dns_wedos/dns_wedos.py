@@ -143,8 +143,8 @@ class Authenticator(DNSAuthenticator):
         logger.debug("Starting ..")
         domain = '.'.join(domain.split('.')[-2:])
         self._get_wedos_client().add_txt_record(domain, validation_name, validation)
-        logger.debug("Waiting 5 minutes for applied changes on internet")
-        sleep(300)
+        # logger.debug("Waiting 5 minutes for applied changes on internet")
+        # sleep(300)
 
     def _cleanup(self, domain: str, validation_name: str, validation: str) -> None:
         domain = '.'.join(domain.split('.')[-2:])
